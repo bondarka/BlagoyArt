@@ -1,0 +1,220 @@
+/*
+LESS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: @icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+@icon-home: x y offset_x offset_y width height total_width total_height image_path name;
+
+At the bottom of this section, we provide information about the spritesheet itself
+@spritesheet: width height image @spritesheet-sprites;
+*/
+@arrow-name: 'arrow';
+@arrow-x: 41px;
+@arrow-y: 33px;
+@arrow-offset-x: -41px;
+@arrow-offset-y: -33px;
+@arrow-width: 7px;
+@arrow-height: 11px;
+@arrow-total-width: 55px;
+@arrow-total-height: 53px;
+@arrow-image: '../img/sprite.png';
+@arrow: 41px 33px -41px -33px 7px 11px 55px 53px '../img/sprite.png' 'arrow';
+@caret-name: 'caret';
+@caret-x: 0px;
+@caret-y: 47px;
+@caret-offset-x: 0px;
+@caret-offset-y: -47px;
+@caret-width: 9px;
+@caret-height: 6px;
+@caret-total-width: 55px;
+@caret-total-height: 53px;
+@caret-image: '../img/sprite.png';
+@caret: 0px 47px 0px -47px 9px 6px 55px 53px '../img/sprite.png' 'caret';
+@catalog-name: 'catalog';
+@catalog-x: 16px;
+@catalog-y: 33px;
+@catalog-offset-x: -16px;
+@catalog-offset-y: -33px;
+@catalog-width: 14px;
+@catalog-height: 11px;
+@catalog-total-width: 55px;
+@catalog-total-height: 53px;
+@catalog-image: '../img/sprite.png';
+@catalog: 16px 33px -16px -33px 14px 11px 55px 53px '../img/sprite.png' 'catalog';
+@home-name: 'home';
+@home-x: 0px;
+@home-y: 0px;
+@home-offset-x: 0px;
+@home-offset-y: 0px;
+@home-width: 20px;
+@home-height: 16px;
+@home-total-width: 55px;
+@home-total-height: 53px;
+@home-image: '../img/sprite.png';
+@home: 0px 0px 0px 0px 20px 16px 55px 53px '../img/sprite.png' 'home';
+@market-bg-name: 'market-bg';
+@market-bg-x: 39px;
+@market-bg-y: 16px;
+@market-bg-offset-x: -39px;
+@market-bg-offset-y: -16px;
+@market-bg-width: 15px;
+@market-bg-height: 15px;
+@market-bg-total-width: 55px;
+@market-bg-total-height: 53px;
+@market-bg-image: '../img/sprite.png';
+@market-bg: 39px 16px -39px -16px 15px 15px 55px 53px '../img/sprite.png' 'market-bg';
+@market-name: 'market';
+@market-x: 0px;
+@market-y: 16px;
+@market-offset-x: 0px;
+@market-offset-y: -16px;
+@market-width: 17px;
+@market-height: 17px;
+@market-total-width: 55px;
+@market-total-height: 53px;
+@market-image: '../img/sprite.png';
+@market: 0px 16px 0px -16px 17px 17px 55px 53px '../img/sprite.png' 'market';
+@phone-name: 'phone';
+@phone-x: 17px;
+@phone-y: 16px;
+@phone-offset-x: -17px;
+@phone-offset-y: -16px;
+@phone-width: 16px;
+@phone-height: 17px;
+@phone-total-width: 55px;
+@phone-total-height: 53px;
+@phone-image: '../img/sprite.png';
+@phone: 17px 16px -17px -16px 16px 17px 55px 53px '../img/sprite.png' 'phone';
+@search-bg-name: 'search-bg';
+@search-bg-x: 30px;
+@search-bg-y: 33px;
+@search-bg-offset-x: -30px;
+@search-bg-offset-y: -33px;
+@search-bg-width: 11px;
+@search-bg-height: 11px;
+@search-bg-total-width: 55px;
+@search-bg-total-height: 53px;
+@search-bg-image: '../img/sprite.png';
+@search-bg: 30px 33px -30px -33px 11px 11px 55px 53px '../img/sprite.png' 'search-bg';
+@search-name: 'search';
+@search-x: 39px;
+@search-y: 0px;
+@search-offset-x: -39px;
+@search-offset-y: 0px;
+@search-width: 16px;
+@search-height: 16px;
+@search-total-width: 55px;
+@search-total-height: 53px;
+@search-image: '../img/sprite.png';
+@search: 39px 0px -39px 0px 16px 16px 55px 53px '../img/sprite.png' 'search';
+@type-name: 'type';
+@type-x: 33px;
+@type-y: 16px;
+@type-offset-x: -33px;
+@type-offset-y: -16px;
+@type-width: 6px;
+@type-height: 6px;
+@type-total-width: 55px;
+@type-total-height: 53px;
+@type-image: '../img/sprite.png';
+@type: 33px 16px -33px -16px 6px 6px 55px 53px '../img/sprite.png' 'type';
+@user-bg-name: 'user-bg';
+@user-bg-x: 0px;
+@user-bg-y: 33px;
+@user-bg-offset-x: 0px;
+@user-bg-offset-y: -33px;
+@user-bg-width: 16px;
+@user-bg-height: 14px;
+@user-bg-total-width: 55px;
+@user-bg-total-height: 53px;
+@user-bg-image: '../img/sprite.png';
+@user-bg: 0px 33px 0px -33px 16px 14px 55px 53px '../img/sprite.png' 'user-bg';
+@user-name: 'user';
+@user-x: 20px;
+@user-y: 0px;
+@user-offset-x: -20px;
+@user-offset-y: 0px;
+@user-width: 19px;
+@user-height: 16px;
+@user-total-width: 55px;
+@user-total-height: 53px;
+@user-image: '../img/sprite.png';
+@user: 20px 0px -20px 0px 19px 16px 55px 53px '../img/sprite.png' 'user';
+@spritesheet-width: 55px;
+@spritesheet-height: 53px;
+@spritesheet-image: '../img/sprite.png';
+@spritesheet-sprites: @arrow @caret @catalog @home @market-bg @market @phone @search-bg @search @type @user-bg @user;
+@spritesheet: 55px 53px '../img/sprite.png' @spritesheet-sprites;
+
+/*
+The provided classes are intended to be used with the array-like variables
+
+.icon-home {
+  .sprite-width(@icon-home);
+}
+.icon-email {
+  .sprite(@icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.sprite-width(@sprite) {
+  width: extract(@sprite, 5);
+}
+
+.sprite-height(@sprite) {
+  height: extract(@sprite, 6);
+}
+
+.sprite-position(@sprite) {
+  @sprite-offset-x: extract(@sprite, 3);
+  @sprite-offset-y: extract(@sprite, 4);
+  background-position: @sprite-offset-x @sprite-offset-y;
+}
+
+.sprite-image(@sprite) {
+  @sprite-image: extract(@sprite, 9);
+  @sprite-image-bare: ~`"@{sprite-image}".slice(1, -1)`;
+  background-image: url(@sprite-image-bare);
+}
+
+.sprite(@sprite) {
+  .sprite-image(@sprite);
+  .sprite-position(@sprite);
+  .sprite-width(@sprite);
+  .sprite-height(@sprite);
+}
+
+/*
+The `.sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of LESS
+
+This must be run when you have at least 2 sprites.
+  If run with a single sprite, then there will be reference errors.
+
+.sprites(@spritesheet-sprites);
+*/
+.sprites(@sprites, @i: 1) when (@i <= length(@sprites)) {
+  @sprite: extract(@sprites, @i);
+  @sprite-name: e(extract(@sprite, 10));
+  .@{sprite-name} {
+    .sprite(@sprite);
+  }
+  .sprites(@sprites, @i + 1);
+}

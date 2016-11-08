@@ -1,0 +1,450 @@
+@import (less) 'boiler.css';
+@import 'sprite';
+@import 'slick';
+@import 'slick-theme';
+@bgColorWrapper: #fff;
+@bgColorContent: #f0f1f6;
+@bgMenu: #3eade2;
+@colorMenu: #171717;
+@colorDropdown: #666;
+@borderColor: #dddfdf;
+@fontSize: 10px;
+@caretColor: #cb944c;
+@hoverBgColor: rgba(227, 227, 228, 0.77);
+@logoColor: #747688;
+@infoBgColor: rgba(210, 166, 107, 0.88);
+@borderInputColor: #b9b8bd;
+@colorContact: #181616;
+@colorInfo: #2b3056;
+@tablet: ~"only screen and (min-width: 768px)";
+@desktop: ~"only screen and (min-width:1366px)";
+body {
+    background-color: @bgColorWrapper;
+    font-family: 'PT Sans', sans-serif;
+    font-size: @fontSize;
+}
+
+.content {
+    background-color: @bgColorWrapper;
+    padding: 0;
+    min-height: 40px;
+}
+
+.top-header {
+    background-color: @bgColorContent;
+    display: flex;
+    flex-direction: row;
+    @media @tablet {
+        display: none;
+    }
+    &_menutoggle {
+        background-color: @bgMenu;
+        height: 40px;
+        border: none;
+        flex: 0 0 54px;
+    }
+    &_iconbar {
+        width: 16px;
+        background-color: @bgColorWrapper;
+        margin-top: 4px;
+        margin-bottom: 4px;
+    }
+    &_info {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        align-items: center;
+        flex: 1 0 auto;
+    }
+    &_home {
+        .sprite(@home);
+        flex: 0 1 auto;
+        &:hover {
+            cursor: pointer;
+            .sprite(@home);
+        }
+    }
+    &_search {
+        .sprite(@search);
+        flex: 0 1 auto;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &_market {
+        .sprite(@market);
+        flex: 0 1 auto;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &_user {
+        .sprite(@user);
+        flex: 0 1 auto;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    &_phone {
+        .sprite(@phone);
+        flex: 0 1 auto;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.menu {
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    border-top: 1px solid @borderColor;
+    border-bottom: 1px solid @borderColor;
+    transform: translate(0, -150%);
+    transition: transform 500ms linear;
+    background-color: @bgColorWrapper;
+    z-index: 10;
+    max-height: calc(~"100vh - 40px");
+    overflow-y: scroll;
+    @media @tablet {
+        position: static;
+        top: auto;
+        transform: none;
+        transition: none;
+        z-index: auto;
+        max-height: none;
+        overflow-y: visible;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        min-height: 50px;
+        align-items: center;
+        margin-bottom: 20px;
+        
+    }
+    @media @desktop {
+        margin-top: -44px;
+        padding-right: 350px;
+        padding-left:20px;
+    }
+    &.show {
+        transform: translate(0, 0%);
+    }
+    &_item {
+        color: @colorMenu;
+        font-size: @fontSize*1.3;
+        font-weight: 700;
+        min-height: 30px;
+        line-height: 30px;
+    }
+    &_link {
+        position: relative;
+        text-transform: uppercase;
+        display: block;
+        padding: 0 10px;
+        &.dropdown {
+            padding: 0 20px 0 30px;
+        }
+        &:hover {
+            background-color: @hoverBgColor;
+        }
+        @media @tablet {
+            &:hover {
+                background-color: transparent;
+                text-decoration: underline;
+            }
+            .caret {
+                top: 11px;
+            }
+        }
+        .catalog {
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            content: "";
+            .sprite(@catalog);
+        }
+    }
+    &_dropdown {
+        max-width: 100%;
+        border-bottom: 1px solid @borderColor;
+        display: none;
+        box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+        h2 {
+            color: @caretColor;
+            font-size: @fontSize*1.5;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .second {
+            box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.2);
+            h2 {
+                padding: 10px 15px;
+            }
+            @media @tablet {
+                top: 0;
+                right: -250px;
+            }
+        }
+    }
+    &_dropdown-item {
+        min-height: 35px;
+        line-height: 35px;
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 15px;
+            left: 5px;
+            content: "";
+            .sprite(@type);
+        }
+    }
+    @media @tablet {
+        &_dropdown {
+            position: absolute;
+            min-width: 245px;
+            z-index: 10;
+            background-color: @bgColorWrapper;
+            top: 170px;
+            border: 1px solid @borderColor;
+            border-radius: 5px;
+        }
+        &_dropdown-item {
+            &:after {
+                left: 15px;
+            }
+        }
+    }
+    @media @desktop {
+        &_dropdown {
+            top: 125px;
+        }
+    }
+    &_dropdown-link {
+        color: @colorDropdown;
+        font-size: @fontSize*1.5;
+        font-weight: 400;
+        display: block;
+        position: relative;
+        padding-left: 30px;
+        .type {
+            position: absolute;
+            top: 14px;
+            left: 5px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid @caretColor;
+            content: "";
+        }
+        &:hover {
+            background-color: @hoverBgColor;
+        }
+    }
+}
+
+.caret {
+    top: 15px;
+    right: 15px;
+    position: absolute;
+    content: "";
+    transition: transform 300ms linear;
+    .sprite(@caret);
+    .open & {
+        transform: rotate(180deg);
+    }
+    @media @tablet {
+        .menu_dropdown-link & {
+            right: 15px;
+            transform: rotate(-90deg);
+        }
+        right: 0;
+    }
+}
+
+.header-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    @media @tablet {
+        flex-direction: column;
+    }
+}
+
+.top-navigation {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    @media @tablet {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &_logo {
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        a {
+            color: @logoColor;
+            font-size: @fontSize*1.3;
+        }
+        @media @tablet {
+            flex: 1 1 auto;
+            justify-content: flex-start;
+        }
+    }
+    &_search {
+        position: relative;
+        margin: 10px 0;
+        display: none;
+        .input {
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            border: 1px solid @borderInputColor;
+            font-size: @fontSize;
+            padding: 0 10px;
+            box-sizing: border-box;
+            outline: none;
+        }
+        @media @tablet {
+            display: block;
+            flex: 2 1 auto;
+            justify-content: center;
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            .sprite(@search-bg);
+        }
+        &.show {
+            display: block;
+        }
+    }
+    &_contact {
+        display: none;
+        margin: 10px 0;
+        @media @tablet {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1 1 auto;
+        }
+        &.show {
+            display: block;
+        }
+        .number {
+            a {
+                color: @colorContact;
+                font-size: @fontSize*1.6;
+                font-weight: 400;
+            }
+            .hour {
+                color: @caretColor;
+                margin: 10px 0;
+            }
+            .info {
+                color: @colorInfo;
+            }
+        }
+        @media @tablet {
+            display: block;
+            .number {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-end;
+                &_works {
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+.profile {
+    display: none;
+    @media @tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        padding: 12px 20px;
+    }
+    &.show {
+        margin: 10px 0;
+        padding: 0 20px;
+        display: block;
+    }
+    .purchase {
+        &_bag {
+            display: inline-block;
+            position: relative;
+            .sprite(@market-bg);
+            .badge {
+                position: absolute;
+                right: -30px;
+                background-color: @caretColor;
+                color: @bgColorWrapper;
+                border-radius: 50%;
+                padding: 2px 3px;
+            }
+        }
+        &_price {
+            display: inline-block;
+            padding-left: 40px;
+            color: @colorInfo;
+            font-size: @fontSize*1.1;
+            text-transform: uppercase;
+            font-weight: 700;
+            .cost {
+                font-size: @fontSize*1.3;
+                padding: 0 5px;
+            }
+        }
+    }
+    .exit {
+        &_user {
+            .sprite(@user-bg);
+            display: inline-block;
+        }
+        &_comand {
+            display: inline-block;
+            padding-left: 10px;
+            text-transform: uppercase;
+            color: @colorInfo;
+            font-size: @fontSize*1.3;
+            font-weight: 700;
+        }
+        // &.show {
+        //     display: block;
+        // }
+    }
+}
+
+.foto {
+    &_info {
+        min-height: 43px;
+        min-width: 191px;
+        background-color: @infoBgColor;
+        font-size: @fontSize*1.6;
+        color: @bgColorWrapper;
+        padding: 10px;
+        position: absolute;
+        top: 50%;
+        left: 30px;
+        transform: translateY(-21px);
+        @media @tablet {
+            font-size: @fontSize*2.5;
+            transform: translateY(-35px);
+        }
+    }
+}
+
+@media @tablet {
+    .slick-prev,
+    .slick-next {
+        height: 68px;
+    }
+}
