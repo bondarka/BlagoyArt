@@ -1,4 +1,4 @@
-# Sports news
+# Blagoy Art
 The repository for the 	creation site about some art.
 
 USED BY: 
